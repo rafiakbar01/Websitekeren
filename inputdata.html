@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Keren - Input Data</title>
+    <STYLE type="text/css">
+        .warna{
+            color: white;background:rgb(96, 154, 219);
+            font-family:arial;
+        }
+    
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        body {margin:0 ; }
+            .header 
+            {
+                background-color: white;
+                padding: 20px;
+                text-align: center;     
+            }
+            .header h1 {
+                font-size: 24px;
+                color: #333; /* Change the color to your preference */
+            }
+            
+            /* CSS for the form input fields and buttons */
+            input[type="text"] {
+                width: 25%;
+                padding: 5px;
+            }
+            
+            button {
+                background-color: #007BFF; /* Change the color to your preference */
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                margin: 5px;
+            }
+            
+            button:hover {
+                background-color: rgb(0, 0, 0); /* Change the hover color to your preference */
+            }
+            
+            /* CSS for table rows in the "MENU" section */
+            tr:nth-child(odd) {
+                background-color: #f2f2f2; /* Alternate row color */
+            }
+            .topnav
+            {
+                overflow: hidden;
+                background-color: rgb(101, 123, 190);
+            }
+            .topnav a 
+            {
+                float: left;
+                display: block;
+                color: white; 
+                text-align: center; 
+                padding: 14px 16px; 
+                text-decoration:none;
+            }
+            .topnav a:hover 
+            {
+                background-color: white;
+                color: rgb(117, 25, 25);
+            }
+            .colum 
+            {
+                float: left;
+                width: 33.33%;
+                padding: 10px;
+            }
+           
+
+
+    </style>
+    <script>
+        function inputdata() {
+            var nama = document.getElementById("nama").value;
+            var jurusan = document.getElementById("jurusan").value;
+
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("jurusan", jurusan);
+
+            alert("Data berhasil disimpan!");
+        }
+
+        function hapusdata() {
+            localStorage.removeItem("nama");
+            localStorage.removeItem("jurusan");
+
+            document.getElementById("nama").value = "";
+            document.getElementById("jurusan").value = "";
+
+            alert("Data berhasil dihapus!");
+        }
+    </script>
+</head>
+    <body>
+    <div class="header">
+    <div class="header h1">
+    <h1>Input Data Mahasiswa</h1>
+    </div>
+    <form>
+        <table>
+            <div class="topnav">
+                <a href="#">HOME</a>
+                <a href="#">MENU</a>
+            </div>
+        </div>
+        </table>
+        <div class="warna">
+        <form action="hasildata.html" method="post">
+            <div class="body"></div>
+            <label for="nama">Nama: </label>
+            <input type="text" id="nama" name="nama" required><br><br>
+            
+            <label for="jurusan">Jurusan:</label>
+            <input type="text" id="jurusan" name="jurusan" required><br><br>
+            
+            <td>
+                <button type="button" onclick="inputdata()">SUBMIT</button>
+                <button type="button" onclick="hapusdata()">CLEAR</button>
+            </td>
+        </div>
+        </form>
+        </body>
+        </html>
+        
+           
